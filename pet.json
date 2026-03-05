@@ -87,7 +87,7 @@
   "쿠아": { "initialCoefficient": 20, "healthCoefficient": 31, "attackCoefficient": 25, "defenseCoefficient": 24, "agilityCoefficient": 25 },
   "쿠팡": { "initialCoefficient": 20, "healthCoefficient": 24, "attackCoefficient": 24, "defenseCoefficient": 22, "agilityCoefficient": 31 },
   "무지개팡": { "initialCoefficient": 20, "healthCoefficient": 24, "attackCoefficient": 30, "defenseCoefficient": 18, "agilityCoefficient": 31 },
-  "크랩": { "initialCoefficient": 19, "healthCoefficient": 35, "attackCoefficient": 27, "defenseCoefficient": 40, "agilityCoefficient": 4 },
+  "크랩": { "initialCoefficient": 15, "healthCoefficient": 45, "attackCoefficient": 35, "defenseCoefficient": 51, "agilityCoefficient": 6 },
   "킹크랩": { "initialCoefficient": 19, "healthCoefficient": 31, "attackCoefficient": 31, "defenseCoefficient": 39, "agilityCoefficient": 4 },
   "웅이": { "initialCoefficient": 27, "healthCoefficient": 28, "attackCoefficient": 33, "defenseCoefficient": 21, "agilityCoefficient": 25 },
   "베이클": { "initialCoefficient": 24, "healthCoefficient": 28, "attackCoefficient": 31, "defenseCoefficient": 31, "agilityCoefficient": 4 },
@@ -947,5 +947,6 @@
   "이구로스": { "initialCoefficient": 23, "healthCoefficient": 35, "attackCoefficient": 47, "defenseCoefficient": 23, "agilityCoefficient": 30 },
   "깡우비": { "initialCoefficient": 22, "healthCoefficient": 52, "attackCoefficient": 44, "defenseCoefficient": 22, "agilityCoefficient": 18 },
   "푸푸푸": { "initialCoefficient": 13, "healthCoefficient": 37, "attackCoefficient": 36, "defenseCoefficient": 13, "agilityCoefficient": 45 }
+
 
 }
