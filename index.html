@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>쉬는시간</title>
+    <style>
+        :root {
+            /* 🎨 차분한 남색 & 무광 노란색 테마 */
+            --bg-color: #0b101a;       /* 깊고 어두운 남색 */
+            --sidebar-bg: #121826;    /* 사이드바 배경 */
+            --card-bg: #1a2233;       /* 카드 배경 */
+            
+            /* 포인트 컬러: 쨍하지 않은 차분한 노란색 (Muted Yellow/Mustard) */
+            --accent-core: #e6b94d;   /* 제목 및 강조용 노란색 */
+            --accent-dim: #b8933d;    /* 활성화된 버튼용 어두운 노란색 */
+            
+            --text-main: #d1d8e0;     /* 차가운 톤의 연한 회색 */
+            --text-dim: #707a8c;      /* 흐린 텍스트 */
+            --border-color: #252e3f;  /* 경계선 */
+            --hover-bg: #222b3d;      /* 호버 시 배경 */
+        }
+
+        * { box-sizing: border-box; }
+
+        body { 
+            margin: 0; padding: 0; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: 'Pretendard', sans-serif; 
+            display: flex; height: 100vh; overflow: hidden; 
+        }
+
+        /* 🚪 사이드바 */
+        .sidebar { 
+            width: 240px; 
+            background: var(--sidebar-bg); 
+            border-right: 1px solid var(--border-color); 
+            display: flex; 
+            flex-direction: column; 
+            padding: 30px 15px; 
+            flex-shrink: 0; 
+        }
+
+        .sidebar-title { 
+            font-size: 1.1rem; 
+            font-weight: 700; 
+            text-align: center; 
+            margin-bottom: 40px; 
+            color: var(--accent-core); 
+            letter-spacing: -0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-grow: 1;
+        }
+
+        .sidebar button { 
+            background: transparent; 
+            border: 1px solid transparent; 
+            color: var(--text-dim); 
+            padding: 12px 16px; 
+            text-align: left; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            transition: 0.2s; 
+            font-size: 14px;
+        }
+
+        .sidebar button:hover { 
+            background: var(--hover-bg);
+            color: var(--text-main);
+        }
+
+        .sidebar button.active { 
+            background: var(--accent-core); 
+            color: #1a2233; 
+            font-weight: 700; 
+            border: none; 
+        }
+
+        /* 👣 푸터 */
+        .sidebar-footer {
+            margin-top: auto;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .sidebar-footer p {
+            font-size: 11px;
+            color: var(--text-dim);
+            margin-top: 10px;
+        }
+
+        /* 🖼 콘텐츠 영역 */
+        .content { flex: 1; padding: 40px; overflow-y: auto; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            padding: 25px; 
+            margin-bottom: 25px; 
+        }
+
+        h2 { 
+            margin-top: 0; 
+            font-size: 1.4rem; 
+            color: var(--accent-core); 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            margin-bottom: 20px; 
+        }
+        
+        h2::before { 
+            content: ''; 
+            width: 3px; 
+            height: 18px; 
+            background: var(--accent-core); 
+            border-radius: 2px; 
+        }
+
+        /* 📋 메모 리스트 스타일 추가 */
+        .memo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .memo-item {
+            display: flex;
+            gap: 12px;
+            padding: 10px 0;
+            color: var(--text-dim);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            line-height: 1.6;
+        }
+
+        .memo-item:last-child { border-bottom: none; }
+
+        .memo-item span {
+            color: var(--accent-core);
+            font-weight: 700;
+            min-width: 20px;
+        }
+
+        .frame-wrapper { 
+            width: 100%; 
+            background: #000; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+        }
+        .full-iframe { width: 100%; border: none; display: block; }
+
+        /* 📱 모바일 */
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .sidebar-title { margin-bottom: 15px; }
+            .nav-menu {
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+            .sidebar button { 
+                padding: 8px 14px; 
+                font-size: 13px; 
+                flex-shrink: 0; 
+            }
+            .content { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="sidebar-title">킹꼬</div>
+         
+        <div class="nav-menu">
+            <button id="tabHome" class="active">🏠 홈</button>
+            <button id="tabCalc">🔥 환각 계산기</button>
+            <button id="tabCompare">🐾 페트 비교</button>
+        </div>
+
+<footer class="sidebar-footer">
+    <a href="https://hits.sh/cigarlab.github.io/291/">
+        <img alt="Hits" src="https://hits.sh/cigarlab.github.io/291.svg?view=today-total&style=flat-square&label=VISITORS&color=00a8ff&labelColor=242e42"/>
+    </a>
+    <p>© 2026 sup_bot All rights reserved.</p>
+</footer>
+    </nav>
+
+    <main class="content">
+        <section id="homeTab" class="tab-content active">
+            <div class="card">
+   <ul class="memo-list">
+    <li class="memo-item">
+        <span>01</span> 
+        <div>
+            <strong>외부 공유 안내</strong><br>
+            <strong>사전 문의 </strong> 후 진행해 주시기 바랍니다.
+        </div>
+    </li>
+    <li class="memo-item">
+        <span>02</span> 
+        <div>
+            <strong>서비스 유지 관련 공지</strong><br>
+            상황에 따라 <strong>예고 없이 서비스가 중단</strong>될 수 있음을 알립니다.
+        </div>
+    </li>
+    <li class="memo-item">
+        <span>03</span> 
+        <div>
+            <strong>계산 오차 및 확률 안내</strong><br>
+            적용된 로직에 따라 <strong>실제 게임 내 수치와 소폭의 차이</strong>가 있을 수 있으니, 단순 참고용으로 활용 바랍니다.
+        </div>
+    </li>
+</ul>
+        </section>
+
+        <section id="expTab" class="tab-content">
+            <h2>경험치 계산기</h2>
+            <div class="frame-wrapper"><iframe src="./exp.html" class="full-iframe"></iframe></div>
+        </section>
+
+        <section id="calcTab" class="tab-content">
+            <h2>환각 계산기</h2>
+            <div class="frame-wrapper"><iframe src="./rebirth.html" class="full-iframe"></iframe></div>
+        </section>
+
+        <section id="compareTab" class="tab-content">
+            <h2>페트 능력치 비교</h2>
+            <div class="frame-wrapper"><iframe src="./compare.html" class="full-iframe"></iframe></div>
+        </section>
+
+    </main>
+
+    <script>
+        const config = {
+            tabExp: "./exp.html",
+            tabCalc: "./rebirth.html",
+            tabCompare: "./compare.html",
+        };
+
+        function isMobile() {
+            return window.innerWidth <= 768 || /Android|iPhone|iPad/i.test(navigator.userAgent);
+        }
+
+        function adjustFrameHeight() {
+            const activeTab = document.querySelector(".tab-content.active");
+            const iframe = activeTab?.querySelector("iframe");
+            if (iframe) {
+                const vh = window.innerHeight;
+                const rect = iframe.getBoundingClientRect();
+                iframe.style.height = (vh - rect.top - 20) + "px";
+            }
+        }
+
+        document.querySelectorAll(".sidebar button").forEach(btn => {
+            btn.addEventListener("click", function() {
+                const id = this.id;
+                if (id === 'tabHome') {
+                    switchTab(id, 'homeTab');
+                    return;
+                }
+                if (isMobile()) {
+                    if(config[id]) window.open(config[id], '_blank');
+                } else {
+                    const targetSectionId = id.replace('tab', '').charAt(0).toLowerCase() + id.replace('tab', '').slice(1) + 'Tab';
+                    switchTab(id, targetSectionId);
+                }
+            });
+        });
+
+        function switchTab(btnId, sectionId) {
+            if(!document.getElementById(sectionId)) return;
+            document.querySelectorAll(".sidebar button").forEach(b => b.classList.remove("active"));
+            document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
+            const activeBtn = document.getElementById(btnId);
+            const activeSection = document.getElementById(sectionId);
+            if (activeBtn) activeBtn.classList.add("active");
+            if (activeSection) activeSection.classList.add("active");
+            if (!isMobile()) setTimeout(adjustFrameHeight, 50);
+        }
+
+        window.addEventListener("resize", () => {
+            if (!isMobile()) adjustFrameHeight();
+        });
+
+        window.onload = () => {
+            if (!isMobile()) setTimeout(adjustFrameHeight, 100);
+        };
+    </script>
+</body>
+
+</html>
