@@ -558,7 +558,7 @@
   "헬울프": { "initialCoefficient": 24, "healthCoefficient": 22, "attackCoefficient": 36, "defenseCoefficient": 13, "agilityCoefficient": 31 },
   "카르노스": { "initialCoefficient": 26, "healthCoefficient": 22, "attackCoefficient": 35, "defenseCoefficient": 22, "agilityCoefficient": 25 },
   "핑가루": { "initialCoefficient": 20, "healthCoefficient": 30, "attackCoefficient": 35, "defenseCoefficient": 18, "agilityCoefficient": 25 },
-  "바가루": { "initialCoefficient": 20, "healthCoefficient": 32, "attackCoefficient": 29, "defenseCoefficient": 23, "agilityCoefficient": 25 },
+  "바가루": { "initialCoefficient": 16, "healthCoefficient": 41, "attackCoefficient": 39, "defenseCoefficient": 30, "agilityCoefficient": 32 },
   "베로스": { "initialCoefficient": 22, "healthCoefficient": 26, "attackCoefficient": 31, "defenseCoefficient": 19, "agilityCoefficient": 29 },
   "노르푸스": { "initialCoefficient": 24, "healthCoefficient": 26, "attackCoefficient": 35, "defenseCoefficient": 11, "agilityCoefficient": 32 },
   "주기노": { "initialCoefficient": 24, "healthCoefficient": 26, "attackCoefficient": 39, "defenseCoefficient": 15, "agilityCoefficient": 23 },
@@ -950,3 +950,4 @@
 
 
 }
+
