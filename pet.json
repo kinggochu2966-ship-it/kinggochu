@@ -121,7 +121,6 @@
   "구르노스": { "initialCoefficient": 22, "healthCoefficient": 44, "attackCoefficient": 45, "defenseCoefficient": 37, "agilityCoefficient": 19 },
   "카누스": { "initialCoefficient": 16, "healthCoefficient": 36, "attackCoefficient": 45, "defenseCoefficient": 28, "agilityCoefficient": 18 },
   "파누스": { "initialCoefficient": 16, "healthCoefficient": 47, "attackCoefficient": 43, "defenseCoefficient": 29, "agilityCoefficient": 19 },
-
   "비트로돈": { "initialCoefficient": 16, "healthCoefficient": 29, "attackCoefficient": 42, "defenseCoefficient": 42, "agilityCoefficient": 12 },
   "스톤크랩": { "initialCoefficient": 15, "healthCoefficient": 35, "attackCoefficient": 35, "defenseCoefficient": 56, "agilityCoefficient": 7 },
   "야무리": { "initialCoefficient": 18, "healthCoefficient": 33, "attackCoefficient": 40, "defenseCoefficient": 40, "agilityCoefficient": 18 },
@@ -959,3 +958,4 @@
   
 
   }
+
