@@ -950,6 +950,10 @@
   "만모르": { "error": "계수 계산 실패" },
   "포일론": { "error": "계수 계산 실패" },
   "바우": { "error": "계수 계산 실패" }
-
-
-}
+  "백주": { "initialCoefficient": 25, "healthCoefficient": 31, "attackCoefficient": 49, "defenseCoefficient": 13, "agilityCoefficient": 43 },
+  "가시돌이": { "initialCoefficient": 26, "healthCoefficient": 58, "attackCoefficient": 34, "defenseCoefficient": 35, "agilityCoefficient": 15 },
+  "악령": { "initialCoefficient": 25, "healthCoefficient": 36, "attackCoefficient": 50, "defenseCoefficient": 9, "agilityCoefficient": 43 },
+  "원더러": { "initialCoefficient": 23, "healthCoefficient": 31, "attackCoefficient": 40, "defenseCoefficient": 11, "agilityCoefficient": 50 },
+  "모만타이": { "initialCoefficient": 23, "healthCoefficient": 36, "attackCoefficient": 45, "defenseCoefficient": 10, "agilityCoefficient": 49 },
+  "세라젠": { "initialCoefficient": 25, "healthCoefficient": 34, "attackCoefficient": 48, "defenseCoefficient": 9, "agilityCoefficient": 47 },    
+  }
