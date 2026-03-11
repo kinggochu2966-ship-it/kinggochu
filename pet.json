@@ -128,7 +128,7 @@
   "이구로스": { "initialCoefficient": 23, "healthCoefficient": 35, "attackCoefficient": 47, "defenseCoefficient": 23, "agilityCoefficient": 30 },
   "불카노스": { "initialCoefficient": 20, "healthCoefficient": 36, "attackCoefficient": 47, "defenseCoefficient": 16, "agilityCoefficient": 38 },
   "파이톤": { "initialCoefficient": 13, "healthCoefficient": 26, "attackCoefficient": 42, "defenseCoefficient": 12, "agilityCoefficient": 49 },
-  "시바": { "initialCoefficient": 11, "healthCoefficient": 31, "attackCoefficient": 49, "defenseCoefficient": 22, "agilityCoefficient": 33 },
+  "시바": { "initialCoefficient": 11, "healthCoefficient": 32, "attackCoefficient": 49, "defenseCoefficient": 18, "agilityCoefficient": 33 },
   "쿼카루": { "initialCoefficient": 18, "healthCoefficient": 33, "attackCoefficient": 47, "defenseCoefficient": 14, "agilityCoefficient": 41 },
   "불여우": { "initialCoefficient": 19, "healthCoefficient": 31, "attackCoefficient": 50, "defenseCoefficient": 16, "agilityCoefficient": 35 },
   "파이쿠스": { "initialCoefficient": 20, "healthCoefficient": 38, "attackCoefficient": 44, "defenseCoefficient": 42, "agilityCoefficient": 7 },
@@ -966,5 +966,6 @@
   "부이쿠": { "initialCoefficient": 28, "healthCoefficient": 55, "attackCoefficient": 33, "defenseCoefficient": 30, "agilityCoefficient": 8 }
   }
     
+
 
 
