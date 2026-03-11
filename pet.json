@@ -941,7 +941,7 @@
   "노스토로스": { "initialCoefficient": 18, "healthCoefficient": 32, "attackCoefficient": 43, "defenseCoefficient": 20, "agilityCoefficient": 34 },
   "토리케라": { "initialCoefficient": 16, "healthCoefficient": 27, "attackCoefficient": 18, "defenseCoefficient": 28,"agilityCoefficient": 10},  
   "아르카": { "initialCoefficient": 22, "healthCoefficient": 39, "attackCoefficient": 47, "defenseCoefficient": 17, "agilityCoefficient": 39 },
-  "로제드래곤": { "error": "계수 계산 실패" },
+  "로제드래곤": { "initialCoefficient": 21, "healthCoefficient": 37, "attackCoefficient": 52, "defenseCoefficient": 17, "agilityCoefficient": 31 },
   "우비석": { "error": "계수 계산 실패" },
   "포보스": { "error": "계수 계산 실패" },
   "막쿠마": { "error": "계수 계산 실패" },
@@ -966,6 +966,7 @@
   "부이쿠": { "initialCoefficient": 28, "healthCoefficient": 55, "attackCoefficient": 33, "defenseCoefficient": 30, "agilityCoefficient": 8 }
   }
     
+
 
 
 
